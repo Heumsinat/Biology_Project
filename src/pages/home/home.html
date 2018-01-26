@@ -8,16 +8,28 @@
 
 <ion-content padding>
   <h2>List Chapter</h2>
-  <ion-list no-lines>
-    <ion-item-sliding *ngFor="let chapters of data; let i=index">
+
+  <!--chapter-->
+  <ion-list *ngIf="state == 'chapters'" no-lines>
+    <ion-item-sliding *ngFor="let chapters of chapters; let i=index">
       <ion-item nopadding>
-            <button ion-button block color="primary" >
+            <button ion-button block color="primary" (click)="chapter(chapters.id)">
           <!--Chapter: {{chapters.data}}-->
             Chapter: {{chapters.number}}<br>
               {{chapters.title}}
-          <!--Created Date: {{chapters.created_date}}<br>-->
-          <!--Modified Date : {{chapters.modified_date}}<br>-->
             </button>
+      </ion-item>
+    </ion-item-sliding>
+  </ion-list>
+  <!--lesson-->
+  <ion-list *ngIf="state == 'lessons'">
+    <ion-item-sliding *ngFor="let lessons of lessons; let i=index">
+      <ion-item nopadding>
+        <button ion-button block color="primary" (click)="chapter(lessons.id)">
+          <!--Chapter: {{chapters.data}}-->
+          Lesson: {{lessons.number}}<br>
+          {{lessons.title}}
+        </button>
       </ion-item>
     </ion-item-sliding>
   </ion-list>
