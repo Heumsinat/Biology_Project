@@ -1,19 +1,19 @@
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
-import { SQLite, SQLiteObject } from "@ionic-native/sqlite";
 import { DatabaseProvider } from "../../providers/database/database";
+import {SectionPage} from "../section/section";
 
 @Component({
   selector: 'page-home',
   templateUrl: 'home.html'
 })
 export class HomePage {
-  state: string = 'chapters';
-  chapters: any = [];
-  lessons: any = [];
-  constructor(public navCtrl: NavController, public db: DatabaseProvider, private sqlite: SQLite) {
+    public menuTitle = 'ជីវវិទ្យា​ ថ្នាក់​ទី​១២';
+    state: string = 'chapters';
+    chapters: any = [];
+    lessons: any = [];
+  constructor(public navCtrl: NavController, public db: DatabaseProvider) {
     this.getChapters();
-    this.getLessons();
   }
 
   getChapters(){
@@ -68,5 +68,12 @@ export class HomePage {
                     })
                 }
             })
+    }
+    public lesson(lesson_id: number) {
+        this.navCtrl.push(
+            SectionPage, {
+                lessonID: lesson_id
+            }
+        );
     }
 }

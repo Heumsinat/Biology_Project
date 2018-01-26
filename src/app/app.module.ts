@@ -9,11 +9,13 @@ import { HomePage } from '../pages/home/home';
 import { SQLite } from '@ionic-native/sqlite';
 import { Toast } from '@ionic-native/toast';
 import { DatabaseProvider } from '../providers/database/database';
+import { SectionPage } from '../pages/section/section';
 
 @NgModule({
   declarations: [
     MyApp,
-    HomePage
+    HomePage,
+    SectionPage
   ],
   imports: [
     BrowserModule,
@@ -22,7 +24,8 @@ import { DatabaseProvider } from '../providers/database/database';
   bootstrap: [IonicApp],
   entryComponents: [
     MyApp,
-    HomePage
+    HomePage,
+    SectionPage
   ],
   providers: [
     StatusBar,

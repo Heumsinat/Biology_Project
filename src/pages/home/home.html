@@ -1,14 +1,12 @@
 <ion-header>
   <ion-navbar>
     <ion-title>
-      Biology
+      {{menuTitle}}
     </ion-title>
   </ion-navbar>
 </ion-header>
 
 <ion-content padding>
-  <h2>List Chapter</h2>
-
   <!--chapter-->
   <ion-list *ngIf="state == 'chapters'" no-lines>
     <ion-item-sliding *ngFor="let chapters of chapters; let i=index">
@@ -21,11 +19,12 @@
       </ion-item>
     </ion-item-sliding>
   </ion-list>
+
   <!--lesson-->
   <ion-list *ngIf="state == 'lessons'">
     <ion-item-sliding *ngFor="let lessons of lessons; let i=index">
       <ion-item nopadding>
-        <button ion-button block color="primary" (click)="chapter(lessons.id)">
+        <button ion-button block color="primary" (click)="lesson(lessons.id)">
           <!--Chapter: {{chapters.data}}-->
           Lesson: {{lessons.number}}<br>
           {{lessons.title}}
