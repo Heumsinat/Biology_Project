@@ -14,14 +14,14 @@
 
 
 <ion-content padding>
-  <ion-item-sliding *ngFor="let sections of sections | slice:0:1; let i=index">
+  <ion-item-sliding >
     <ion-item nopadding>
-        <h2>{{sections.title}}</h2><br>
+        <h2>{{current.title || ''}}</h2><br>
         <ion-card text-wrap>
             <!--{{sections.image1}}-->
-            {{sections.content}}
+            {{current.content || ''}}
         </ion-card>
-      <button ion-button block color="primary" (click)="navigate(i+1)">
+      <button ion-button block color="primary" (click)="section(current.id)">
           Go To Question
       </button>
     </ion-item>

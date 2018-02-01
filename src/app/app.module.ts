@@ -10,12 +10,14 @@ import { SQLite } from '@ionic-native/sqlite';
 import { Toast } from '@ionic-native/toast';
 import { DatabaseProvider } from '../providers/database/database';
 import { SectionPage } from '../pages/section/section';
+import { QuestionPage } from '../pages/question/question'
 
 @NgModule({
   declarations: [
     MyApp,
     HomePage,
-    SectionPage
+    SectionPage,
+    QuestionPage
   ],
   imports: [
     BrowserModule,
@@ -25,7 +27,8 @@ import { SectionPage } from '../pages/section/section';
   entryComponents: [
     MyApp,
     HomePage,
-    SectionPage
+    SectionPage,
+    QuestionPage
   ],
   providers: [
     StatusBar,
